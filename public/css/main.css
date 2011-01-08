@@ -1,0 +1,42 @@
+@charset "utf-8";
+@font-face{ font-family: "Eckmann"; src: url(eckmann.ttf); }
+
+* { margin: 0; padding: 0; color: inherit; border: 0; font: inherit; text-decoration: none; }
+.input { border: 1px solid; }
+.textInput { width: 154px; height: 14px; padding: 2px 1px 1px 3px; }
+.selectInput { width: 160px; height: 19px; padding: 0 1px 1px 0; }
+.selectInput option { height: 16px; }
+li { list-style-type: none; }
+
+html,body { color: #A0A0A0; font: normal 400 12px/16px Verdana, Helvetica, Arial, sans-serif; background: #000; position: relative; }
+body { padding-bottom: 28px; }
+#window { position: relative; width: 100%; min-width: 999px; }
+
+.borderBox { padding: 20px 25px; }
+
+.title { font-weight: 700; }
+
+.form.borderBox { width: 400px; margin: 10px auto; }
+.helpLink { display: inline-block; height: 17px; width: 17px; line-height: 16px; color: #000; background: url(/img/dot.png) 0 0 no-repeat; overflow: hidden; text-align: center; vertical-align: bottom; margin-bottom: 1px; }
+
+#nav { width: 200px; position: absolute; top: 0; }
+#mainBody { position: relative; }
+#mainContent { margin-left: 200px; position: relative; min-height: 475px; }
+
+#header { height: 87px; margin-bottom: 18px; color: #FFF; font: 56px/80px Eckmann, Verdana, sans-serif; text-indent: 16px; text-shadow: #FFF 0 0 16px, #FFF 0 0 4px; }
+
+#nav a { margin-left: 16px; color: #CCC; font-size: 11px; display: block; }
+#nav a:hover { color: #FFF; }
+#nav a::before { content: "»"; position: relative; left: -0.5em; }
+#nav a.doubleClear { margin-top: 12px; }
+
+form label { display: inline-block; width: 150px; }
+form label[for]:first-child::after { content: ":"; }
+form fieldset { margin: 2px 0; min-height: 17px; }
+
+.submitButton { padding: 0 0.5em; }
+.form.borderBox .submitButton, .form .checkboxField { margin-left: 154px; }
+button { text-transform: capitalize; }
+
+#footer { text-align: right; padding: 6px 25px; font-size: 11px; font-family: Helvetica, Arial, sans-serif; position: absolute; bottom: 0; right: 0; }
+.nest { overflow: hidden; }

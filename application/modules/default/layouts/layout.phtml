@@ -1,0 +1,39 @@
+<?php echo $this->doctype() ?> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+<?php
+echo $this->headMeta() . PHP_EOL;
+echo $this->headTitle() . PHP_EOL;
+echo $this->headLink() . PHP_EOL;
+?> 
+  <!--[if IE]>
+   <link rel="stylesheet" type="text/css" href="/css/ie.css" />
+  <![endif]-->
+ </head>
+ <body>
+  <div id="window">
+   <div id="header">
+    <h1>CastleQuest<span class="version">3</span></h1>
+   </div>
+   <div id="mainBody">
+    <div id="mainContent" class="borderBox">
+     <div class="nest">
+      <?php echo $this->pageTitle() ?>
+      <?php echo $this->layout()->content ?>
+     </div>
+    </div>
+    <div id="nav">
+     <div class="borderBox">
+<?php
+echo '<h3 class="title">' . $this->translate('loginNav') . '</h2>' . PHP_EOL;
+foreach ($this->defaultNavigation as $page) {
+    echo '<a href="' . $page->href . '"' . ($page->class ? ' class="' . $page->class . '"' : '' ) . '>' . $this->translate($page->label) . '</a>' . PHP_EOL;
+}
+?>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="footer">© <?php echo date('Y') ?> Thomas Crummett</div>
+ </body>
+</html>

@@ -1,0 +1,30 @@
+<?php echo $this->translate('welcome') . PHP_EOL ?>
+<form method="post" id="loginForm" class="form loginForm borderBox" action="<?php echo $this->form->action ?>">
+ <fieldset>
+  <legend><?php echo $this->translate('loginFormHeader')?></legend><p>
+<?php
+if ($this->message) {
+    echo $this->translate($this->message);
+}
+?></p>
+  <fieldset>
+   <label for="username" id="usernameLabel"><?php echo $this->translate('loginNameLabel')?></label>
+   <input type="text" class="input textInput" id="username" name="username" value="<?php echo $this->form->username ?>" />
+  </fieldset>
+  <fieldset>
+   <label for="password" id="passwordLabel"><?php echo $this->translate('passwordLabel')?></label>
+   <input type="password" class="input textInput passwordInput" id="password" name="password" />
+  </fieldset>
+  <fieldset class="submitField">
+   <button type="submit" class="input button submitButton" id="loginFormSubmit" name="submit" value="login">
+    <span><?php echo $this->translate('loginFormSubmitButtonLabel')?></span>
+   </button>
+  </fieldset>
+ </fieldset>
+</form>
+<p class="cqText cqParagraphText">
+ <?php echo $this->translate('forgottenPassword') ?>
+ <a href="<?=$this->url(array('controller'=>'account', 'action'=>'recover'))?>"><?php echo $this->translate('forgottenPasswordLink') ?></a><br />
+ <?php echo $this->translate('activateAccount') ?>
+ <a href="<?=$this->url(array('controller'=>'account', 'action'=>'activate'))?>"><?php echo $this->translate('activateAccountLink') ?></a><br />
+</p>

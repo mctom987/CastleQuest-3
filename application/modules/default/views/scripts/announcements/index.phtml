@@ -1,0 +1,37 @@
+<?php
+/*
+function work($objs)
+{
+    foreach ($objs as $obj) {
+         echo $obj->id . '<br />';
+         work($obj->Objs);
+    }
+}
+*/
+$msgs = $this->announcements;
+set_time_limit(1);
+$record = array(array());
+$depth = 0;
+$current = 0;
+while ($depth >= 0) {
+    $record[$depth][$current] = $msgs[$current];
+    $thisRecords = count($record[$depth][$current]);
+    if ($record[$depth][$current]->topic) {
+        echo str_repeat(' ', $depth) . $record[$depth][$current]->topic . '<br />' . PHP_EOL;
+        if (0 < count($record[$depth][$current]->Announcement))
+        {
+            $msgs = $record[$depth][$current]->Announcement;
+            $depth++;
+            $current = 0;
+        } else {
+            if ($current >= $thisRecords) {
+                $depth--;
+                $current = 0;
+            } else
+                $current++;
+        }
+    } else {
+        $depth--;
+        //$current = 0;
+    }
+}

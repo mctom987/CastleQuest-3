@@ -1,0 +1,7 @@
+.settings
+.buildpath
+.DS_STORE
+THUMBS.DB
+.project
+log/http-access.log
+log/http-error.log

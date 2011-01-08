@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+<tmx version="1.4">
+ <body>
+  <tu tuid="login">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Login]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="welcome">
+   <tuv xml:lang="en_us">
+    <seg><![CDATA[<p>
+     Only a few mouse-clicks away lies a universe much unlike our own.<br />
+     Powerful wizards roam the land and inhabit great castles. They summon
+     dangerous creatures and send them off to battle it out with their rivals.
+     A thriving economy forces the creation of new cities. Powerful, magically
+     enhanced items are scattered throughout the world and can be used by your
+     creatures.<br />
+     Welcome to the world of Castle Quest.
+    </p>
+    <p>
+     If you don’t have a Castle Quest 2 account yet, click on the “New Account”
+     button in the menu.<br />
+     If you already have an account, log in using the form below.
+    </p>]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="loginNav">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Menu]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="goHome">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Login]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="newAccount">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[New Account]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="announcements">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Announcements]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="gameRules">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Game Rules]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="loginFormHeader">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Please login]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="loginNameLabel">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Account]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="passwordLabel">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Password]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="loginFormSubmitButtonLabel">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Login]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="forgottenPassword">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Forgot your password?]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="forgottenPasswordLink">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Recover account]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="activateAccount">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Didn’t receive your activation email?]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="activateAccountLink">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Resend activation]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="announcementsTitle">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Game Announcements]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="registrationFormSubmitButtonLabel">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Complete registration]]></seg>
+   </tuv>
+  </tu>
+ </body>
+</tmx>

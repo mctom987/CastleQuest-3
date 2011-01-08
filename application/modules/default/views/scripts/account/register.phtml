@@ -1,0 +1,49 @@
+<?php echo $this->translate('newAccountBrief') . PHP_EOL ?>
+<form action="<?php echo $this->form->action ?>" method="post" class="form borderBox">
+ <fieldset>
+  <legend><?php echo $this->translate('registrationFormHeader')?></legend> 
+<?php
+if ($this->message) {
+    echo '   <p>' . $this->translate($this->message) . '</p>' . PHP_EOL;
+}
+?>
+  <fieldset>
+   <label for="username" id="usernameLabel"><?php echo $this->translate('loginNameLabel')?></label>
+   <input type="text" class="input textInput" id="username" name="username" value="<?php echo $this->escape($this->form->username) ?>" />
+  </fieldset>
+  <fieldset>
+   <label for="password" id="passwordLabel"><?php echo $this->translate('passwordLabel')?></label>
+   <input type="password" class="input textInput passwordInput" id="password" name="password" />
+  </fieldset>
+  <fieldset>
+   <label for="verifyPassword" id="verifyPasswordLabel"><?php echo $this->translate('verifyPasswordLabel')?></label>
+   <input type="password" class="input textInput passwordInput" id="verifyPassword" name="verifyPassword" />
+  </fieldset>
+  <fieldset>
+   <label for="email" id="emailLabel"><?php echo $this->translate('emailLabel')?></label>
+   <input type="text" class="input textInput" id="email" name="email" value="<?php echo $this->escape($this->form->email) ?>" />
+  </fieldset>
+  <fieldset>
+   <label for="class" id="classLabel"><?php echo $this->translate('classLabel')?></label>
+   <select class="input textInput selectInput" id="class" name="class">
+    <option value=""<?php echo empty($this->form->class) ? ' selected="selected"' : '' ?>></option> 
+<?php
+foreach ($this->classes as $class) {
+    echo '    <option value="' . $this->escape($class->name) . '"' . ($this->form->class == $class->id ? ' selected="selected"' : '') . '>' . $this->escape($class->name) . '</option>' . PHP_EOL;
+}
+?>
+   </select>
+   <a href="<?php $this->url(array('controller'=>'help','action'=>'classes'), NULL, TRUE) ?>" class="helpLink">?</a>
+  </fieldset>
+  <fieldset class="checkboxField">
+   <input type="checkbox" name="rules" id="rules" class="input inputCheckbox"<?php echo isset($this->form->rules) ? ' checked="checked"' : '' ?> />
+   <label for="rules" id="rulesLabel"><?php echo $this->translate('acceptRules') ?></label>
+   </button>
+  </fieldset>
+  <fieldset class="submitField">
+   <button type="submit" class="input button submitButton" id="loginFormSubmit" name="submit" value="login">
+    <span><?php echo $this->translate('registrationFormSubmitButtonLabel')?></span>
+   </button>
+  </fieldset>
+ </fieldset>
+</form>

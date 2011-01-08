@@ -1,0 +1,20 @@
+<h2 class="title"><?=$this->message?></h2> 
+<?php if (404 == $this->error): ?>
+<p>
+ The page you requested could not be found.
+</p>
+<?php endif; ?>
+<?php if ('development' == APPLICATION_ENV): ?>
+<h3>Exception information:</h3>
+<p>
+ <b>Message:</b> <?php echo $this->exception->getMessage() ?>
+</p>
+<h3>Stack trace:</h3>
+<pre>
+ <?=$this->exception->getTraceAsString()?> 
+</pre>
+<h3>Request Parameters:</h3>
+<pre>
+ <?=var_export($this->request->getParams(), true)?> 
+</pre>
+<?php endif ?>

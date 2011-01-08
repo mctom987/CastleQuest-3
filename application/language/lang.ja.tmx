@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<tmx version="1.4">
+ <body>
+  <tu tuid="login">
+   <tuv xml:lang="ja_JP">
+    <seg><![CDATA[Japan]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="weslcome">
+   <tuv xml:lang="ja_JP">
+    <seg><![CDATA[<p class="cqText cqParagraphText">
+     Only a few mouse-clicks away lies a universe much unlike our own.<br />
+     Powerful wizards roam the land and inhabit great castles. They summon
+     dangerous creatures and send them off to battle it out with their rivals.
+     A thriving economy forces the creation of new cities. Powerful, magically
+     enhanced items are scattered throughout the world and can be used by your
+     creatures.<br />
+     Welcome to the world of Castle Quest.
+    </p>
+    <p class="cqText cqParagraphText">
+     If you don’t have a Castle Quest 2 account yet, click on the “New Account”
+     button in the menu.<br />
+     If you already have an account, log in using the form below.
+    </p>]]></seg>
+   </tuv>
+  </tu>
+ </body>
+</tmx>
