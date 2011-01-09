@@ -1,6 +1,6 @@
 <?php
 
-class HelpController extends Zend_Controller_Action
+class HelpController extends Cq_Controller
 {
     public function rulesAction()
     {
