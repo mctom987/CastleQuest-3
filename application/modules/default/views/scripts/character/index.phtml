@@ -1,0 +1,41 @@
+<h3><?php echo $this->translate('characterDevelopment') ?></h3>
+<table>
+ <tr>
+  <th>
+   <label for="mageClass"><?php echo $this->translate('classLabel') ?></label>
+  </th>
+  <td>
+   <span id="mageClass"><?php echo $this->user->Class->name ?> <?php echo $this->translate('classMageDescriptor') ?></span>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <label for="mageLevel"><?php echo $this->translate('levelLabel') ?></label>
+  </th>
+  <td>
+   <span id="mageLevel"><?php echo $level = $this->user->level ?></span>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <label for="mageExperience"><?php echo $this->translate('experienceLabel') ?></label>
+  </th>
+  <td>
+   <span id="mageExperience"><?php echo $this->user->experience ?> / <?php echo $needed = Model_User::getExperienceForLevel($level + 1) ?></span>
+   (<?php echo $needed - $this->user->experience ?> <?php echo $this->translate('experienceRemaining') ?>)
+  </td>
+  <td>
+   <div class="experienceBox">
+    <div style="width: <?php echo round(($this->user->experience - Model_User::getExperienceForLevel($level)) / ($needed - Model_User::getExperienceForLevel($level)) * 100) ?>%"></div>
+   </div>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <label for="magePowerBalance"><?php echo $this->translate('powerBalanceLabel') ?></label>
+  </th>
+  <td>
+   <span id="magePowerBalance"><?php echo $this->user->resources->powerBalance ?>%</span>
+  </td>
+ </tr>
+</table>

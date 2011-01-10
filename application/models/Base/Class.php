@@ -7,6 +7,7 @@
  * 
  * @property integer $id
  * @property string $name
+ * @property string $description
  * @property Doctrine_Collection $User
  * 
  * @package    ##PACKAGE##
@@ -30,6 +31,14 @@ abstract class Model_Base_Class extends Doctrine_Record
         $this->hasColumn('name', 'string', 15, array(
              'type' => 'string',
              'length' => 15,
+             'fixed' => false,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             ));
+        $this->hasColumn('description', 'string', null, array(
+             'type' => 'string',
              'fixed' => false,
              'unsigned' => false,
              'primary' => false,

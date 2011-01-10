@@ -99,5 +99,40 @@
     <seg><![CDATA[Complete registration]]></seg>
    </tuv>
   </tu>
+  <tu tuid="gameMenuCharacterLink">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[My Profile]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="classMageDescriptor">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Mage]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="characterPageTitle">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Character]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="characterDevelopment">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Character Development]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="classLabel">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Class]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="levelLabel">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[Level]]></seg>
+   </tuv>
+  </tu>
+  <tu tuid="experienceRemaining">
+   <tuv xml:lang="en_US">
+    <seg><![CDATA[xp to next level]]></seg>
+   </tuv>
+  </tu>
  </body>
 </tmx>

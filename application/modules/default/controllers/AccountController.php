@@ -4,6 +4,15 @@ class AccountController extends Cq_LoginController
 {
     public function registerAction()
     {
+        $config = Zend_Registry::get('config');
+        if (FALSE == $config->game->registrationOpen) {
+            return $this->render('registration-closed');
+        }
+        $players = Doctrine::getTable('Model_User')->count();
+        if ($players >= $config->game->maxPlayers) {
+            return $this->render('registration-closed');
+        }
+        
         $this->view->headTitle('Registration');
         $this->view->pageTitle($this->view->translate('signup'));
         $form = new ArrayObject;

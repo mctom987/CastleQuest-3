@@ -40,3 +40,6 @@ button { text-transform: capitalize; }
 
 #footer { text-align: right; padding: 6px 25px; font-size: 11px; font-family: Helvetica, Arial, sans-serif; position: absolute; bottom: 0; right: 0; }
 .nest { overflow: hidden; }
+
+.experienceBox { width: 200px; height: 14px; border: 1px solid; background: #F00; }
+.experienceBox div { height: inherit; background: #0F0; }

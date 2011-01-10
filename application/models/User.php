@@ -17,6 +17,18 @@ class Model_User extends Model_Base_User
     const WRONG_PW = self::WRONG_PASSWORD;
     const UNAUTHORIZED = 3;
 
+    public function setUp()
+    {
+        parent::setUp();
+        $this->hasOne('Model_Resources as resources', array(
+             'local' => 'id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Model_Workers as workers', array(
+             'local' => 'id',
+             'foreign' => 'id'));
+    }
+
     /**
      * Perform user authentication against database using provided credentials
      * 
@@ -112,7 +124,7 @@ class Model_User extends Model_Base_User
         $this->link('Class', $class);
     }
 
-    public function setPassword($password, $verify = '')
+    public function setPassword($password, $verify = FALSE)
     {
         $config = Zend_Registry::get('config')->game->security->password;
         $options = array(
@@ -129,48 +141,67 @@ class Model_User extends Model_Base_User
 
         // Check the password for a lower case letter if required
         if ($config->requireMinuscule) {
-            if (preg_match('/[a-z]/', $password)) {
-                // Continue
-            } else {
+            if (!preg_match('/[a-z]/', $password)) {
                 throw new Exception('USER_PASSWORD_MINUSCULE_REQUIRED');
             }
         }
 
         // Check the password for a upper case letter if required
         if ($config->requireMajuscule) {
-            if (preg_match('/[A-Z]/', $password)) {
-                // Continue
-            } else {
+            if (!preg_match('/[A-Z]/', $password)) {
                 throw new Exception('USER_PASSWORD_MAJUSCULE_REQUIRED');
             }
         }
 
         // Check the password for a number if required
         if ($config->requireNumber) {
-            if (preg_match('/[0-9]/', $password)) {
-                // Continue
-            } else {
+            if (!preg_match('/[0-9]/', $password)) {
                 throw new Exception('USER_PASSWORD_NUMBER_REQUIRED');
             }
         }
 
         // Check the password for a special character if required
         if ($config->requireNonAlphanumeric) {
-            if (preg_match('/^[0-9a-zA-Z]/', $password)) {
-                // Continue
-            } else {
+            if (!preg_match('/[^0-9a-zA-Z]/', $password)) {
                 throw new Exception('USER_PASSWORD_CHARACTER_REQUIRED');
             }
         }
 
         // Check the passwords match
-        if ($verify && $verify != $password) {
+        if (FALSE !== $verify && $verify != $password) {
             throw new Exception('USER_PASSWORDS_MISMATCH');
         }
 
         // Regenerate salt for extra security
         $this->generateSalt();
         $this->_set('password', $this->password($password));
+    }
+
+    /**
+     * Calculates the level for a player
+     * 
+     * @return Int $level
+     */
+    public function getLevel()
+    {
+        $config = Zend_Registry::get('config')->game->experience->character;
+        $level = floor(log(-1 * ((($this->experience / $config->base) * (-1 * $config->growthRate / 100)) - 1)) / log(1 + $config->growthRate / 100)) + 1;
+        return $config->maxLevel > 0 && $level > $config->maxLevel ? $config->maxLevel : $level;
+    }
+
+    /**
+     * Returns the amount of experience needed for level $level
+     * 
+     * @param int $level
+     */
+    public static function getExperienceForLevel($level)
+    {
+        $config = Zend_Registry::get('config')->game->experience->character;
+        // Levels are shifted downward by one because level 1 needs 0 experience
+        $level--;
+        $level = $level <= 0 ? 1 : $config->maxLevel > 0 && $level > $config->maxLevel ? $config->maxLevel : $level;
+        $config = Zend_Registry::get('config')->game->experience->character;
+        return round($config->base * ((1 - pow(1 + $config->growthRate / 100, $level)) / (1 - (1 + $config->growthRate / 100))));
     }
 
     /**

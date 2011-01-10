@@ -50,6 +50,18 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view->adminNavigation = new Zend_Navigation($navigation->admin);
     }
 
+    public function _initUserSession()
+    {
+        $auth = Zend_Auth::getInstance();
+        if ($auth->hasIdentity()) {
+            $user = Doctrine::getTable('Model_User')->find($auth->getIdentity()->id);
+        } else {
+            $user = new Model_User;
+        }
+
+        Zend_Registry::set('user', $user);
+    }
+
     public function _initTranslationLocale()
     {
         $this->bootstrap('translate');
