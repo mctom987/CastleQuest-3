@@ -20,6 +20,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
         $conn = Doctrine_Manager::connection($doctrineConfig['dsn'], 'doctrine');
         $conn->setAttribute(Doctrine::ATTR_USE_NATIVE_ENUM, TRUE);
+        $conn->setAttribute(Doctrine::ATTR_QUOTE_IDENTIFIER, TRUE);
         Zend_Registry::set('conn', $conn);
     }
 

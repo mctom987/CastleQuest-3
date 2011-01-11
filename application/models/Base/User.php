@@ -11,18 +11,13 @@
  * @property string $password
  * @property string $salt
  * @property integer $role
- * @property integer $class
- * @property integer $experience
  * @property integer $logins
  * @property integer $failedLogins
  * @property string $ip
  * @property timestamp $created
  * @property timestamp $updated
  * @property Model_Role $Role
- * @property Model_Class $Class
- * @property Doctrine_Collection $Announcement
- * @property Doctrine_Collection $Resources
- * @property Doctrine_Collection $Workers
+ * @property Doctrine_Collection $Character
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -88,25 +83,6 @@ abstract class Model_Base_User extends Doctrine_Record
              'notnull' => true,
              'autoincrement' => false,
              ));
-        $this->hasColumn('class', 'integer', 4, array(
-             'type' => 'integer',
-             'length' => 4,
-             'fixed' => false,
-             'unsigned' => true,
-             'primary' => false,
-             'notnull' => true,
-             'autoincrement' => false,
-             ));
-        $this->hasColumn('experience', 'integer', 8, array(
-             'type' => 'integer',
-             'length' => 8,
-             'fixed' => false,
-             'unsigned' => true,
-             'primary' => false,
-             'default' => '0',
-             'notnull' => true,
-             'autoincrement' => false,
-             ));
         $this->hasColumn('logins', 'integer', 4, array(
              'type' => 'integer',
              'length' => 4,
@@ -163,20 +139,8 @@ abstract class Model_Base_User extends Doctrine_Record
              'local' => 'role',
              'foreign' => 'id'));
 
-        $this->hasOne('Model_Class as Class', array(
-             'local' => 'class',
-             'foreign' => 'id'));
-
-        $this->hasMany('Model_Announcement as Announcement', array(
+        $this->hasMany('Model_Character as Character', array(
              'local' => 'id',
              'foreign' => 'user'));
-
-        $this->hasMany('Model_Resources as Resources', array(
-             'local' => 'id',
-             'foreign' => 'id'));
-
-        $this->hasMany('Model_Workers as Workers', array(
-             'local' => 'id',
-             'foreign' => 'id'));
     }
 }

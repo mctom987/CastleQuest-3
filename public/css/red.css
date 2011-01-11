@@ -2,14 +2,14 @@
 @import url(main.css);
 
 .borderBox { background:
-    url(http://cq2.crummett.us/images/red/c_lefttopcorner.gif) 0 0 no-repeat,
-    url(http://cq2.crummett.us/images/red/c_leftbottomcorner.gif) 0 100% no-repeat,
-    url(http://cq2.crummett.us/images/red/c_rightbottomcorner.gif) 100% 100% no-repeat,
-    url(http://cq2.crummett.us/images/red/c_righttopcorner.gif) 100% 0 no-repeat,
-    url(http://cq2.crummett.us/images/red/c_left.gif) 0 0 repeat-y,
-    url(http://cq2.crummett.us/images/red/c_bottom.gif) 0 100% repeat-x,
-    url(http://cq2.crummett.us/images/red/c_right.gif) 100% 0 repeat-y,
-    url(http://cq2.crummett.us/images/red/c_top.gif) 0 0 repeat-x;
+    url(/images/red/c_lefttopcorner.gif) 0 0 no-repeat,
+    url(/images/red/c_leftbottomcorner.gif) 0 100% no-repeat,
+    url(/images/red/c_rightbottomcorner.gif) 100% 100% no-repeat,
+    url(/images/red/c_righttopcorner.gif) 100% 0 no-repeat,
+    url(/images/red/c_left.gif) 0 0 repeat-y,
+    url(/images/red/c_bottom.gif) 0 100% repeat-x,
+    url(/images/red/c_right.gif) 100% 0 repeat-y,
+    url(/images/red/c_top.gif) 0 0 repeat-x;
 }
 
 a, #nav a::before { color: #BF0000; }
@@ -17,5 +17,5 @@ a:hover { color: #9B0000; }
 
 .input { background: #400000; border-color: #900; color: #D20000; }
 
-#header { background: url(http://cq2.crummett.us/images/red/header_back.gif) 0 0 repeat-x; }
-#header { background: url(http://cq2.crummett.us/images/red/header_right.gif) 100% 0 no-repeat, url(http://cq2.crummett.us/images/red/header_back.gif) 0 0 repeat-x; } 
+#header { background: url(/images/red/header_back.gif) 0 0 repeat-x; }
+#header { background: url(/images/red/header_right.gif) 100% 0 no-repeat, url(/images/red/header_back.gif) 0 0 repeat-x; } 

@@ -11,6 +11,7 @@ ini_set('display_errors', $config->phpSettings->display_errors);
 
 $conn = Doctrine_Manager::connection($config->doctrine->dsn);
 $conn->setAttribute(Doctrine::ATTR_USE_NATIVE_ENUM, TRUE);
+$conn->setAttribute(Doctrine::ATTR_QUOTE_IDENTIFIER, TRUE);
 
 if (Doctrine::generateModelsFromDb($config->doctrine->modelsPath, array(), $options))
     echo 'Success';

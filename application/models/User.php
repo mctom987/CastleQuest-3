@@ -17,18 +17,6 @@ class Model_User extends Model_Base_User
     const WRONG_PW = self::WRONG_PASSWORD;
     const UNAUTHORIZED = 3;
 
-    public function setUp()
-    {
-        parent::setUp();
-        $this->hasOne('Model_Resources as resources', array(
-             'local' => 'id',
-             'foreign' => 'id'));
-
-        $this->hasOne('Model_Workers as workers', array(
-             'local' => 'id',
-             'foreign' => 'id'));
-    }
-
     /**
      * Perform user authentication against database using provided credentials
      * 

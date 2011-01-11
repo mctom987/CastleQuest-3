@@ -13,7 +13,7 @@
  * @property integer $essence
  * @property integer $granite
  * @property integer $runestone
- * @property Model_User $User
+ * @property Model_Character $Character
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -108,7 +108,7 @@ abstract class Model_Base_Resources extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Model_User as User', array(
+        $this->hasOne('Model_Character as Character', array(
              'local' => 'id',
              'foreign' => 'id'));
     }

@@ -8,7 +8,7 @@
  * @property integer $id
  * @property string $name
  * @property string $description
- * @property Doctrine_Collection $User
+ * @property Doctrine_Collection $Character
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -50,7 +50,7 @@ abstract class Model_Base_Class extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('Model_User as User', array(
+        $this->hasMany('Model_Character as Character', array(
              'local' => 'id',
              'foreign' => 'class'));
     }
